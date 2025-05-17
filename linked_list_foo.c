@@ -104,5 +104,27 @@ Node *search(Node *head, int val){
     return head;
 }
 
-//10.
+//10. printList
+void printList(Node *head){
+	if(!(head)){
+		printf("List is empty\n");
+		return;
+	}
+	while(head){
+		printf("%d ", head->val);
+		head = head->next;
+	}
+	printf("\n");
+}
+//11. freeList
+void freeList(Node **head){
+	if(!(*head)) return;
+	Node *tmp;
+	while(tmp){
+		tmp = (*head)->next;
+		free(*head);
+		*head = tmp;
+	}
+}
+
 
